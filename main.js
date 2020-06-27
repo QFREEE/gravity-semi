@@ -1,8 +1,10 @@
 window.onload = function(){
     var canvas = document.getElementById("canvas"),
         context = canvas.getContext("2d"),
+
         width = canvas.width = window.innerWidth,
         height = canvas.height = window.innerHeight,
+
         p1 = particle.create(width / 2, height / 2, 0.0, 0),
         p2 = particle.create(width / 2 + 300, height / 2, 0.8, -Math.PI / 2),
         p2moon = particle.create(width / 2 + 330, height / 2, 2, -Math.PI / 2),
@@ -14,10 +16,7 @@ window.onload = function(){
         p6 = particle.create(width / 2 + 100, height / 2, 2, Math.PI / 2),
         
         // should orbit p3:
-        p7 = particle.create(width / 2 - 540, height / 2, 1, Math.PI / 2)
-  
-  
-        ;
+        p7 = particle.create(width / 2 - 540, height / 2, 1, Math.PI / 2);
     
     p1.mass = 300;
     
@@ -49,6 +48,7 @@ window.onload = function(){
       context.clearRect(0, 0, width, height);
       context.fillStyle = "#404040";
       context.fillRect(0, 0, width, height);
+      
       bodies.forEach(function(b){
         bodies.forEach(function(other){
           if(b != other && other.active){
